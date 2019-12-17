@@ -37,9 +37,13 @@ do
         printf -v pfCounter "%08d" $counter
         echo -n -e "\r  Clip:" ${pfCounter}
 
+        ffmpeg -v error -y -i $folderOut/audio_temp.wav -ac 1 -ar $samplingRate -ss $((1 + $clip * $clipDuration)) -t $clipDuration $audioFolder/aug_1_audio_${pfCounter}.wav
         ffmpeg -v error -y -i $folderOut/audio_temp.wav -ac 1 -ar $samplingRate -ss $((2 + $clip * $clipDuration)) -t $clipDuration $audioFolder/aug_2_audio_${pfCounter}.wav
+        ffmpeg -v error -y -i $folderOut/audio_temp.wav -ac 1 -ar $samplingRate -ss $((3 + $clip * $clipDuration)) -t $clipDuration $audioFolder/aug_3_audio_${pfCounter}.wav
         ffmpeg -v error -y -i $folderOut/audio_temp.wav -ac 1 -ar $samplingRate -ss $((4 + $clip * $clipDuration)) -t $clipDuration $audioFolder/aug_4_audio_${pfCounter}.wav
+        ffmpeg -v error -y -i $folderOut/audio_temp.wav -ac 1 -ar $samplingRate -ss $((5 + $clip * $clipDuration)) -t $clipDuration $audioFolder/aug_5_audio_${pfCounter}.wav
         ffmpeg -v error -y -i $folderOut/audio_temp.wav -ac 1 -ar $samplingRate -ss $((6 + $clip * $clipDuration)) -t $clipDuration $audioFolder/aug_6_audio_${pfCounter}.wav
+        ffmpeg -v error -y -i $folderOut/audio_temp.wav -ac 1 -ar $samplingRate -ss $((7 + $clip * $clipDuration)) -t $clipDuration $audioFolder/aug_7_audio_${pfCounter}.wav
         
         counter=$((counter+1))
     done    
