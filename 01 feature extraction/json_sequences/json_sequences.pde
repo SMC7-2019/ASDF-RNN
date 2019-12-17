@@ -2,12 +2,12 @@ import com.runwayml.*;
 
 float SCORE_THRESHOLD = 0.6;
 
-String BASEFOLDER = "output";
+String BASEFOLDER = "data/output";
 String  EXTENSION = "png";
-String      STYLE = "ballet";
+String      STYLE = "mixed";
 
 String framesFolder=BASEFOLDER + "/frames";
-String jsonFolder="data/" + BASEFOLDER + "/json";
+String jsonFolder= BASEFOLDER + "/json";
 
 int     FRAMERATE = 30;
 int  CLIPDURATION = 8;
@@ -79,7 +79,7 @@ void setup() {
   textSize(15);
   frameRate(60);
 
-  currentClip=2682;
+  currentClip=0;
   initBatch();
 
   runway = new RunwayHTTP(this);
